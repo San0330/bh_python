@@ -1,13 +1,13 @@
 import socket
 
-target_host = "google.com"
-target_port = 80
+target_host = socket.gethostbyname(socket.gethostname())
+target_port = 9988
 
-client = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-client.connect((target_host,target_port))
+client.connect((target_host, target_port))
 
-client.send(b"GET / HTTP/1.1\r\nHost: google.com\r\n\r\n")
+client.send(b"Hello, world. I am San.")
 
 response = client.recv(4096)
 
