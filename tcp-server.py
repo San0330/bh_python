@@ -12,7 +12,7 @@ print(f"[*] Listening on {bind_ip}:{bind_port}")
 
 
 def handle_client(client_socket):
-    request = client_socket.recv(1024)
+    request = client_socket.recv(4096)
 
     print("[*] Received: %s" % request)
 
